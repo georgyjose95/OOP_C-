@@ -1,0 +1,9 @@
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\bin\Debug\netstandard2.0\CustomerManagement.BL.deps.json
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\bin\Debug\netstandard2.0\CustomerManagement.BL.dll
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\bin\Debug\netstandard2.0\CustomerManagement.BL.pdb
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.csprojAssemblyReference.cache
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.csproj.CoreCompileInputs.cache
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.AssemblyInfoInputs.cache
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.AssemblyInfo.cs
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.dll
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.pdb
