@@ -20,7 +20,8 @@ namespace CustomerManagment.BLTest
                 State = "Abc",
                 Country = "Abc",
                 PostalCode = "1231AF",
-                AddressType = 1
+                AddressType = AddressTypes.Home
+                
             };
 
             //Act
@@ -35,6 +36,58 @@ namespace CustomerManagment.BLTest
             Assert.AreEqual(expected.Country, actual.Country);
             Assert.AreEqual(expected.PostalCode, actual.PostalCode);
             Assert.AreEqual(expected.AddressType, actual.AddressType);
+
+        }
+
+        [TestMethod]
+        public void ValidSave()
+        {
+            //Assert
+            var addressRepo = new AddressDbRepository();
+            var newAddress = new Address(1)
+            {
+                StreetLine1 = "123 Abc",
+                StreetLine2 = "Abc apartment",
+                City = "Abc",
+                State = "Abc",
+                Country = "Abc",
+                PostalCode = "1231AF",
+                AddressType = AddressTypes.Home,
+                HasChanges = true
+
+            };
+
+            //Act
+            var actual = addressRepo.Save(newAddress);
+
+            //Assert
+            Assert.AreEqual(true, actual);
+
+        }
+
+        [TestMethod]
+        public void InValidSave()
+        {
+            //Assert
+            var addressRepo = new AddressDbRepository();
+            var newAddress = new Address(1)
+            {
+                StreetLine1 = "123 Abc",
+                StreetLine2 = "Abc apartment",
+                City = "Abc",
+                State = "Abc",
+                Country = "Abc",
+                PostalCode = null,
+                AddressType = AddressTypes.Home,
+                HasChanges = true
+
+            };
+
+            //Act
+            var actual = addressRepo.Save(newAddress);
+
+            //Assert
+            Assert.AreEqual(false,actual);
 
         }
     }

@@ -51,7 +51,7 @@ namespace CustomerManagment.BLTest
                         State = "Abc",
                         Country = "Abc",
                         PostalCode = "1231AF",
-                        AddressType = 1
+                        AddressType = AddressTypes.Home
                     },
                     new Address()
                     {
@@ -62,7 +62,7 @@ namespace CustomerManagment.BLTest
                          State = "Xyz",
                          Country = "Xyz",
                          PostalCode = "1231XZ",
-                         AddressType = 2
+                         AddressType = AddressTypes.Work
                     }
                 }
 
@@ -85,12 +85,50 @@ namespace CustomerManagment.BLTest
                 Assert.AreEqual(expected.AddressList[i].Country, actual.AddressList[i].Country);
                 Assert.AreEqual(expected.AddressList[i].PostalCode, actual.AddressList[i].PostalCode);
                 Assert.AreEqual(expected.AddressList[i].AddressType, actual.AddressList[i].AddressType);
-
             }
-            
-
         }
 
+        [TestMethod]
+        public void ValidSave()
+        {
+            //Arrange
+            var customerRepo = new CustomerDbRepository();
+            var newCustomer = new Customer(1)
+            {
+                EmailAddress = "cristiano@juventus.com",
+                FirstName = "Cristiano",
+                LastName = "Ronaldo",
+                CustomerType = CustomerTypes.Businness,
+                HasChanges = true
+            };
+
+            //Act 
+            var actual = customerRepo.Save(newCustomer);
+
+            //Assert
+            Assert.AreEqual(true, actual);
+        }
+
+        [TestMethod]
+        public void InValidSave()
+        {
+            //Arrange
+            var customerRepo = new CustomerDbRepository();
+            var newCustomer = new Customer(1)
+            {
+                EmailAddress = "cristiano@juventus.com",
+                FirstName = null,
+                LastName = "Ronaldo",
+                CustomerType = CustomerTypes.Businness,
+                HasChanges = true
+            };
+
+            //Act 
+            var actual = customerRepo.Save(newCustomer);
+
+            //Assert
+            Assert.AreEqual(false, actual);
+        }
     }
 
 }

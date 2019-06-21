@@ -21,7 +21,7 @@ namespace CustomerManagement.BL
                 address.State = "Abc";
                 address.Country = "Abc";
                 address.PostalCode = "1231AF";
-                address.AddressType = 1;
+                address.AddressType = AddressTypes.Home;
             }
             return address;
         }
@@ -38,10 +38,9 @@ namespace CustomerManagement.BL
                 State = "Abc",
                 Country = "Abc",
                 PostalCode = "1231AF",
-                AddressType = 1
+                AddressType = AddressTypes.Home
             };
             addressList.Add(address1);
-
             Address address2 = new Address(2)
             {
                 StreetLine1 = "123 Xyz",
@@ -50,16 +49,37 @@ namespace CustomerManagement.BL
                 State = "Xyz",
                 Country = "Xyz",
                 PostalCode = "1231XZ",
-                AddressType = 2
+                AddressType = AddressTypes.Work
             };
             addressList.Add(address2);
+            
+
             return addressList;
         }
         public bool Save(Address address)
         {
-            // Code to save content into repository
+            var success = true;
 
-            return true;
+            if (address.HasChanges)
+            {
+                if (address.IsValid)
+                {
+                    if (address.IsNew)
+                    {
+                        // Call an insert stored procedure
+                    }
+                    else
+                    {
+                        // Call an update stored procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
+
         }
     }
 }

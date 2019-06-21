@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CustomerManagement.BL
 {
-    public class Order
+    public class Order : EntityBase
     {
         public Order(): this(0)
         {
@@ -21,7 +21,8 @@ namespace CustomerManagement.BL
         public DateTimeOffset? OrderDate { get; set; }
         public List<OrderItems> orderedItems { get; set; }
         public int ShippingAddressId { get; set; }
-        public bool Validate()
+        public override string ToString() => $"{OrderDate}--->({OrderId})";
+        public override bool Validate()
         {
             var isValid = true;
             if(OrderDate == null)  isValid = false; 

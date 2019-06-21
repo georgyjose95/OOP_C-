@@ -28,8 +28,28 @@ namespace CustomerManagement.BL
         }
         public bool Save(Product product)
         {
-            // Code that save the product into the database
-            return true;
+            var success = true;
+
+            if (product.HasChanges)
+            {
+                if (product.IsValid)
+                {
+                    if (product.IsNew)
+                    {
+                        // Call an insert stored procedure
+                    }
+                    else
+                    {
+                        // Call an update stored procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
+
         }
     }
 }

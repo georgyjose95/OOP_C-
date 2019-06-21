@@ -89,6 +89,7 @@ namespace CustomerManagment.BLTest
             //Arrange
             Customer newCustomer = new Customer
             {
+                FirstName = "Gareth",
                 LastName = "Bale",
                 EmailAddress = "bale@gmail.com"
             };

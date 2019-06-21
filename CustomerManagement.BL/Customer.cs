@@ -3,7 +3,16 @@ using System.Collections.Generic;
 
 namespace CustomerManagement.BL
 {
-    public class Customer
+    public enum CustomerTypes
+    {
+        Government,
+        Education,
+        Businness,
+        Normal,
+        Premium
+      
+    };
+    public class Customer : EntityBase
     {
         public Customer() : this(0) // Constructor chaining used when a constructor want to call another constructor. Default value of 0 is passed for Id
         {
@@ -16,12 +25,13 @@ namespace CustomerManagement.BL
             //without initialization can result in null value expection. 
         }
         public int CustomerId { get; private set; }
-        public int CustomerType { get; set; }
+        public CustomerTypes CustomerType { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public List<Address> AddressList { get; set; } // Implements a 'has a' composition relationship with the address class
         public static int InstanceCount { get; set; }
+        public override string ToString() => $"{CustomerType} -->{FullName}";
 
         public string FullName
         {
@@ -40,9 +50,10 @@ namespace CustomerManagement.BL
             }
         }
         //Validate - checks whethere the field is null
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
+            if (string.IsNullOrWhiteSpace(FirstName)) isValid = false;
             if (string.IsNullOrWhiteSpace(LastName)) { isValid = false; }
             if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
             return isValid;

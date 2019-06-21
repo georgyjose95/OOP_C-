@@ -58,6 +58,8 @@
     <Compile Include="ProudctDbRepositoryTest.cs" />
     <Compile Include="OrderDbRepositoryTest.cs" />
     <Compile Include="AddressDbRepositoryTest.cs" />
+    <Compile Include="OrderItemsDbRepositoryTest.cs" />
+    <Compile Include="AddressTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

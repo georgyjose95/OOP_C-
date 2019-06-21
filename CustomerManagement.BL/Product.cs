@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CustomerManagement.BL
 {
-    public class Product
+    public class Product : EntityBase
     {
         public Product()
         {
@@ -19,11 +19,13 @@ namespace CustomerManagement.BL
         public string Description { get; set; }
         public double? CurrentPrice { get; set; }
 
-        public bool Validate()
+        public override string ToString() => ProductName;
+        public override bool Validate()
         {
             var isValid = true;
             if (string.IsNullOrWhiteSpace(ProductName)) { isValid = false; }
             if (CurrentPrice == null) isValid = false;
+            if (string.IsNullOrWhiteSpace(Description))  isValid = false;
             return isValid;
         }
     }

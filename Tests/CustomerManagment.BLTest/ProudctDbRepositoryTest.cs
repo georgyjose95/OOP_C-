@@ -30,5 +30,46 @@ namespace CustomerManagment.BLTest
             Assert.AreEqual(expected.Description, actual.Description);
 
         }
+
+        [TestMethod]
+        public void ValidSave()
+        {
+            //Arrange
+            var productRepo = new ProductDbRepository();
+            var newProduct = new Product(2)
+            {
+                ProductName = "Jersery",
+                CurrentPrice = 45.23,
+                Description = "Real Madrid Home Jersey",
+                HasChanges = true,
+                
+            };
+            //Act
+            var actual = productRepo.Save(newProduct);
+
+            //Assert
+            Assert.AreEqual(true, actual);
+            
+        }
+
+        [TestMethod]
+        public void InValidSave()
+        {
+            //Arrange
+            var productRepo = new ProductDbRepository();
+            var newProduct = new Product(2)
+            {
+                ProductName = "Jersery",
+                CurrentPrice = null,
+                Description = "Real Madrid Fake Jersey",
+                HasChanges = true,
+
+            };
+            //Act
+            var actual = productRepo.Save(newProduct);
+
+            //Assert
+            Assert.AreEqual(false, actual);
+        }
     }
 }

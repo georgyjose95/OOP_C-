@@ -4,35 +4,33 @@ using System.Text;
 
 namespace CustomerManagement.BL
 {
-    public class OrderDbRepository
+    public class OrderItemsDbRepository
     {
 
-        public Order RetrieveById(int orderId)
+        public OrderItems RetrieveById(int orderId)
         {
-            Order order = new Order(1);
+            OrderItems orderedItems = new OrderItems(1);
             //Code for retrieving the customer based on the Id
 
             //Hard coded
-            if(order.OrderId == 1)
+            if ( orderedItems.OrderItemId== 1)
             {
-                order.OrderDate = new DateTimeOffset(DateTime.Now.Year, 10, 12, 14, 25, 45, new TimeSpan(4, 0, 0));
+                orderedItems.Product = "Boots";
             }
-            Console.WriteLine($"ToString Overrided in the Order class : {order.ToString()}");
-            return order;
-           
-            
+            Console.WriteLine($"ToString Overrided in the Order class : {orderedItems.ToString()}");
+            return orderedItems;
 
         }
-        
-        public bool Save(Order order)
+
+        public bool Save(OrderItems orderedItems)
         {
             var success = true;
 
-            if (order.HasChanges)
+            if (orderedItems.HasChanges)
             {
-                if (order.IsValid)
+                if (orderedItems.IsValid)
                 {
-                    if (order.IsNew)
+                    if (orderedItems.IsNew)
                     {
                         // Call an insert stored procedure
                     }
@@ -49,5 +47,6 @@ namespace CustomerManagement.BL
             return success;
 
         }
+
     }
 }

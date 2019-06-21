@@ -18,7 +18,7 @@ namespace CustomerManagment.BLTest
             bool expected = true;
 
             //Act
-            bool actual = true;
+            bool actual = order.IsValid;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -32,7 +32,7 @@ namespace CustomerManagment.BLTest
             bool expected = false;
 
             //Act
-            bool actual = false;
+            bool actual = order.IsValid;
 
             //Assert
             Assert.AreEqual(expected, actual);

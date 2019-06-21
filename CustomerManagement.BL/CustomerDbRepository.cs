@@ -27,14 +27,35 @@ namespace CustomerManagement.BL
                 customer.LastName = "Ronaldo";
                 customer.AddressList = addressDbRepository.RetrieveByCustomerId(customerId).ToList();
             }
+            Console.WriteLine($"Customer ToString() Override output: {customer.ToString()}");
             return customer;
-
+           
         }
 
         public bool Save(Customer customer)
         {
-            // Code that save the customer into the database
-            return true;
+            var success = true;
+
+            if (customer.HasChanges)
+            {
+                if (customer.IsValid)
+                {
+                    if (customer.IsNew)
+                    {
+                        // Call an insert stored procedure
+                    }
+                    else
+                    {
+                        // Call an update stored procedure
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
+       
     }
 }

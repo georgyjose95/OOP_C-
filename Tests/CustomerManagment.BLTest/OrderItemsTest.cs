@@ -20,21 +20,20 @@ namespace CustomerManagment.BLTest
             bool expected = true;
 
             //Act
-            bool actual = true;
+            bool actual = orderItems.IsValid;
 
             //Assert
-            Assert.AreEqual(expected,actual
-                );
+            Assert.AreEqual(expected,actual);
         }
         [TestMethod]
         public void InValidOrderItem()
         {
             //Arrange
             OrderItems orderItem = new OrderItems();
-            bool expected = true;
+            bool expected = false;
 
             //Act
-            bool actual = true;
+            bool actual = orderItem.IsValid;
 
             //Assert
             Assert.AreEqual(expected, actual);
