@@ -7,3 +7,6 @@ C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj
 C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.AssemblyInfo.cs
 C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.dll
 C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.pdb
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\bin\Debug\netstandard2.0\CommonCL.dll
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\bin\Debug\netstandard2.0\CommonCL.pdb
+C:\Users\georg\source\repos\Customer Management System\CustomerManagement.BL\obj\Debug\netstandard2.0\CustomerManagement.BL.csproj.CopyComplete

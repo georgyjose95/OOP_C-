@@ -1,0 +1,6 @@
+C:\Users\georg\source\repos\Customer Management System\CommonCL\bin\Debug\CommonCL.dll
+C:\Users\georg\source\repos\Customer Management System\CommonCL\bin\Debug\CommonCL.pdb
+C:\Users\georg\source\repos\Customer Management System\CommonCL\obj\Debug\CommonCL.csprojAssemblyReference.cache
+C:\Users\georg\source\repos\Customer Management System\CommonCL\obj\Debug\CommonCL.csproj.CoreCompileInputs.cache
+C:\Users\georg\source\repos\Customer Management System\CommonCL\obj\Debug\CommonCL.dll
+C:\Users\georg\source\repos\Customer Management System\CommonCL\obj\Debug\CommonCL.pdb

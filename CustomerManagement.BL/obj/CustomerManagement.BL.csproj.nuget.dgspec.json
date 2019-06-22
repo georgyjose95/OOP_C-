@@ -4,6 +4,17 @@
     "C:\\Users\\georg\\source\\repos\\Customer Management System\\CustomerManagement.BL\\CustomerManagement.BL.csproj": {}
   },
   "projects": {
+    "C:\\Users\\georg\\source\\repos\\Customer Management System\\CommonCL\\CommonCL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\georg\\source\\repos\\Customer Management System\\CommonCL\\CommonCL.csproj",
+        "projectName": "CommonCL",
+        "projectPath": "C:\\Users\\georg\\source\\repos\\Customer Management System\\CommonCL\\CommonCL.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\georg\\source\\repos\\Customer Management System\\CustomerManagement.BL\\CustomerManagement.BL.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -29,7 +40,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\georg\\source\\repos\\Customer Management System\\CommonCL\\CommonCL.csproj": {
+                "projectPath": "C:\\Users\\georg\\source\\repos\\Customer Management System\\CommonCL\\CommonCL.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

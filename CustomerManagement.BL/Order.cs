@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CommonCL;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CustomerManagement.BL
 {
-    public class Order : EntityBase
+    public class Order : EntityBase, ILoggable
     {
         public Order(): this(0)
         {
@@ -21,6 +22,9 @@ namespace CustomerManagement.BL
         public DateTimeOffset? OrderDate { get; set; }
         public List<OrderItems> orderedItems { get; set; }
         public int ShippingAddressId { get; set; }
+
+        public string Log() => $"{OrderId} : {this.OrderDate.Value.Date} --> Status : {EntityState.ToString()} Shipping Address ID : {ShippingAddressId}";
+
         public override string ToString() => $"{OrderDate}--->({OrderId})";
         public override bool Validate()
         {
